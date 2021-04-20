@@ -19,7 +19,7 @@ from destinasi.viewset_api import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('provinsi', ProvinsiViewSet)
+router.register('destinasi', DestinasiViewSet)
 
 urlpatterns = [
     path('api/',include(router.urls)),

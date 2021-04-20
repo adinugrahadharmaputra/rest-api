@@ -1,8 +1,8 @@
-from destinasi.models import Provinsi
-from destinasi.serializers import PovinsiSerializer
+from destinasi.models import Destinasi
+from destinasi.serializers import DestinasiSerializer
 from rest_framework import viewsets, permissions
 
-class ProvinsiViewSet(viewsets.ModelViewSet):
-    queryset = Provinsi.objects.all()
-    serializer_class = PovinsiSerializer
+class DestinasiViewSet(viewsets.ModelViewSet):
+    queryset = Destinasi.objects.all()
+    serializer_class = DestinasiSerializer
     permission_classes = [permissions.IsAuthenticated]
