@@ -13,10 +13,10 @@ class Provinsi(models.Model):
 class Destinasi(models.Model):
     nama = models.CharField(max_length=50)
     deskripsi = models.TextField()
-    gambar_url = models.URLField()
+    gambar_url = models.URLField(blank = True)
     alamat = models.TextField()
-    situs = models.URLField()
-    telepon = models.CharField(max_length=15,null=True)
+    situs = models.URLField( blank = True)
+    telepon = models.CharField(max_length=15,blank = True)
     provinsi_id = models.ForeignKey(Provinsi, on_delete=models.CASCADE, null=True)
     
 
