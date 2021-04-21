@@ -18,10 +18,13 @@ from django.urls import include, path
 from destinasi.viewset_api import *
 from rest_framework import routers
 
+
 router = routers.DefaultRouter()
 router.register('destinasi', DestinasiViewSet)
+router.register('provinsi', ProvinsiViewSet)
 
 urlpatterns = [
     path('api/',include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api/',include('user.urls'))
 ]
