@@ -44,6 +44,13 @@ class LoginAPI(KnoxLoginView):
 
 # Profile
 class ProfileViewSet(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    def list(self, request):
+        queryset = User.objects.all()
+        serializer = UserSerializer(queryset, many=True)
+        return Response({
+                'status': status.HTTP_200_OK,
+                'message': 'success',
+                'data' : serializer.data
+            })
+
     permission_classes = [permissions.IsAuthenticated]

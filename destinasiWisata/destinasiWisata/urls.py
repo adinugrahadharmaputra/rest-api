@@ -22,7 +22,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('destinasi', DestinasiViewSet, basename='destinasi')
-router.register('provinsi', ProvinsiViewSet)
+router.register('provinsi', ProvinsiViewSet, basename= 'provinsi')
 router.register('register', RegisterViewSet, basename='register')
 
 urlpatterns = [
