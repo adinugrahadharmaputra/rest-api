@@ -79,7 +79,7 @@ class DestinasiViewSet(viewsets.ViewSet):
             }
         )
 
-class ProvinsiViewSet(viewsets.ModelViewSet):
+class ProvinsiViewSet(viewsets.ViewSet):
     def list(self, request):
         queryset = Destinasi.objects.all()
         serializer = DestinasiSerializer(queryset, many=True)

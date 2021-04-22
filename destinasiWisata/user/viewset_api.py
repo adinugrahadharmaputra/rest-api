@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer
 from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework.authtoken.views import ObtainAuthToken
 from knox.views import LoginView as KnoxLoginView
 from rest_framework import viewsets, status
 from user.models import *
@@ -42,8 +43,16 @@ class LoginAPI(KnoxLoginView):
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
 
+# class LoginViewSet(viewsets.ViewSet):
+#     def create(self, request,format=None):
+#         serializer = AuthTokenSerializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.validated_data['user']
+#         login(request, user)
+#         return Respondsuper(LoginViewSet, self).create(request, format=None)
+
 # Profile
-class ProfileViewSet(generics.ListAPIView):
+class ProfileViewSet(viewsets.ViewSet):
     def list(self, request):
         queryset = User.objects.all()
         serializer = UserSerializer(queryset, many=True)

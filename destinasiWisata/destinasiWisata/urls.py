@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from destinasi.viewset_api import *
-from user.viewset_api import RegisterViewSet
+from user.viewset_api import RegisterViewSet,ProfileViewSet
 from rest_framework import routers
 
 
@@ -24,6 +24,7 @@ router = routers.DefaultRouter()
 router.register('destinasi', DestinasiViewSet, basename='destinasi')
 router.register('provinsi', ProvinsiViewSet, basename= 'provinsi')
 router.register('register', RegisterViewSet, basename='register')
+router.register('profile', ProfileViewSet, basename = 'profile')
 
 urlpatterns = [
     path('api/',include(router.urls)),
