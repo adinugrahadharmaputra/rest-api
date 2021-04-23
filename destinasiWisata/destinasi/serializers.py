@@ -5,9 +5,10 @@ class DestinasiSerializer(serializers.ModelSerializer):
     class Meta:
         model = Destinasi
         fields = ['id','nama','deskripsi','alamat','provinsi_id','situs','telepon','gambar_url']
+    
 
 
 class ProvinsiSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Destinasi
+        model = Provinsi
         fields = ['id','nama','deskripsi']

@@ -1,7 +1,7 @@
 # Adinugraha Dharmaputra
 
 ## Documentation
-[documentation](https://github.com/adinugrahadharmaputra/rest-api)
+[documentation](https://documenter.getpostman.com/view/15484442/TzJvdc7U)
 
 ## Tech Stack
 1. Django
